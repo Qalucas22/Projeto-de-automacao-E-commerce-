@@ -48,14 +48,14 @@ public class Uteis extends BaseTeste {
         wait.until(ExpectedConditions.titleIs(tituloEsperado));
     }
 
-    public static String emailRandom(){
+    public  String emailRandom(){
         String email_inicio = "QaJL";
         String email_final = "@teste.com";
 
         Random random = new Random();
         int minimo = 1 ;
         int maximo = 999999;
-        int resultado = random.nextInt(maximo - maximo)+minimo;
+        int resultado = random.nextInt(maximo - minimo) + minimo;
         return email_inicio + resultado + email_final;
     }
 }
