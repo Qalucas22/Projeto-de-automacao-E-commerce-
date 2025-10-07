@@ -22,28 +22,28 @@ public class CadastroTest extends BaseTeste{
     @Test
     public void TC001_cadastrarUsuarioComSucesso(){
         cadastroPage.acessarTelaCadastro();
-        cadastroPage.cadastrarUsuario(cadastroPage.nomeValido, uteis.emailRandom(), cadastroPage.senhaValida);
+        cadastroPage.inserirDadosDeCadastro(cadastroPage.nomeValido, uteis.emailRandom(), cadastroPage.senhaValida);
         cadastroPage.validarCadastroRealizado();
     }
 
     @Test
     public void TC002_validarCadastroEmailInvalido(){
         cadastroPage.acessarTelaCadastro();
-        cadastroPage.cadastrarUsuario(cadastroPage.nomeValido, cadastroPage.emailInvalido, cadastroPage.senhaValida);
+        cadastroPage.inserirDadosDeCadastro(cadastroPage.nomeValido, cadastroPage.emailInvalido, cadastroPage.senhaValida);
         cadastroPage.validarCadastroComErroDeEmailCadastrado();
     }
 
     @Test
     public void TC003_validarCampoNomeObrigatorioNoCadastro(){
         cadastroPage.acessarTelaCadastro();
-        cadastroPage.cadastrarUsuario("", cadastroPage.emailValido, cadastroPage.senhaValida);
+        cadastroPage.inserirDadosDeCadastro("", cadastroPage.emailValido, cadastroPage.senhaValida);
         cadastroPage.validarCadastroCampoNomeObrigatorio();
     }
 
     @Test
     public void TC004_validarCampoSenhaObrigatorioNoCadastro(){
         cadastroPage.acessarTelaCadastro();
-        cadastroPage.cadastrarUsuario(cadastroPage.nomeValido, cadastroPage.emailValido, "");
+        cadastroPage.inserirDadosDeCadastro(cadastroPage.nomeValido, cadastroPage.emailValido, "");
         cadastroPage.validarCampoSenhaObrigatorio();
     }
 

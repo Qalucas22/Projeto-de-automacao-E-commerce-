@@ -40,21 +40,13 @@ public class CadastroPO extends BasePO {
         uteis.ValidarElementoNaTela(txtCadastrarUsuario);
     }
 
-    public void cadastroUsuarioValido(String nome,  String senha){
-        driver.findElement(iptNome).sendKeys(nome);
-        driver.findElement(iptEmail).sendKeys(uteis.emailRandom());
-        driver.findElement(iptSenha).sendKeys(senha);
-        driver.findElement(btnConfirmarCadastro).click();
-    }
 
-    public void cadastrarUsuario(String nome, String email, String senha){
+    public void inserirDadosDeCadastro(String nome, String email, String senha){
         driver.findElement(iptNome).sendKeys(nome);
         driver.findElement(iptEmail).sendKeys(email);
         driver.findElement(iptSenha).sendKeys(senha);
         driver.findElement(btnConfirmarCadastro).click();
     }
-
-
 
     public void validarCadastroCampoNomeObrigatorio(){
         String txtNomeObrigatorio = driver.findElement(txtCampoNomeObrigatorio).getText();
