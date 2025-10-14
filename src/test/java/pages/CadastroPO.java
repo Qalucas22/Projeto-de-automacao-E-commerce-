@@ -23,8 +23,8 @@ public class CadastroPO extends BasePO {
     private By txtCampoEmailObrigatorio = By.xpath("//*[contains(text(),'O campo e-mail deve ser prenchido corretamente')]");
     private By txtCampoSenhaObrigatorio = By.xpath("//*[contains(text(),'O campo senha deve ter pelo menos 6 dígitos')]");
     public By btnConfirmarCadastro = By.id("btnRegister");
-    private By txtCadastroRealizado = By.xpath("//*[contains(text(),'Cadastro realizado!')]");
-
+    public By txtCadastroRealizado = By.xpath("//*[contains(text(),'Cadastro realizado!')]");
+    public By imgSucesso = By.xpath("//*[contains(@class,'swal2-success-ring')]");
     // ======= DADOS PADRÃO OU VARIÁVEIS INTERNAS =======
     public String nomeValido = "JoaoQA";
     public String emailValido = "teste0001@teste.com";
@@ -45,6 +45,9 @@ public class CadastroPO extends BasePO {
         driver.findElement(iptNome).sendKeys(nome);
         driver.findElement(iptEmail).sendKeys(email);
         driver.findElement(iptSenha).sendKeys(senha);
+    }
+
+    public void confirmarDados(){
         driver.findElement(btnConfirmarCadastro).click();
     }
 

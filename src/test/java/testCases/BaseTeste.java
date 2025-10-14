@@ -22,4 +22,6 @@ public class BaseTeste {
     public  void finalizar(){
         driver.quit();
     }
+
+
 }
