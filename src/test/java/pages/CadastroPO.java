@@ -26,10 +26,6 @@ public class CadastroPO extends BasePO {
     public By txtCadastroRealizado = By.xpath("//*[contains(text(),'Cadastro realizado!')]");
     public By imgSucesso = By.xpath("//*[contains(@class,'swal2-success-ring')]");
     // ======= DADOS PADRÃO OU VARIÁVEIS INTERNAS =======
-    public String nomeValido = "JoaoQA";
-    public String emailValido = "teste0001@teste.com";
-    public String emailInvalido = "dadsadsadasd00";
-    public String senhaValida = "teste001";
 
 
     // ======= MÉTODOS =======

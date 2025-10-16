@@ -8,6 +8,7 @@ import org.junit.runners.MethodSorters;
 import pages.CadastroPO;
 import pages.LoginPo;
 import ultis.ScreenshotHelper;
+import ultis.TestData;
 import ultis.Uteis;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -34,16 +35,12 @@ public class CadastroTest extends BaseTeste{
         cadastroPage.acessarTelaCadastro();
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "01_AcessarTelaDeCadastro");
 
-        cadastroPage.inserirDadosDeCadastro(cadastroPage.nomeValido, uteis.emailRandom(), cadastroPage.senhaValida);
+        cadastroPage.inserirDadosDeCadastro(TestData.TEST_NOME,TestData.TEST_EMAIL,TestData.TEST_PASSWORD);
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "02_VerificarDados");
-
         cadastroPage.confirmarDados();
-
         // Esperar para garantir que o alerta de sucesso esteja totalmente renderizado
-        Thread.sleep(2000);
-
+        Thread.sleep(1000);
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "03_CadastroRealizado");
-
         cadastroPage.validarCadastroRealizado();
     }
 
@@ -54,7 +51,7 @@ public class CadastroTest extends BaseTeste{
         cadastroPage.acessarTelaCadastro();
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "01_AcessarTelaDeCadastro");
 
-        cadastroPage.inserirDadosDeCadastro(cadastroPage.nomeValido, cadastroPage.emailInvalido, cadastroPage.senhaValida);
+        cadastroPage.inserirDadosDeCadastro(TestData.TEST_NOME,TestData.TEST_EMAILINVALIDO,TestData.TEST_PASSWORD);
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "02_VerificarDados");
         cadastroPage.confirmarDados();
         // 🔽 (Opcional) Esperar mensagem de erro se ela demora para aparecer
@@ -70,7 +67,7 @@ public class CadastroTest extends BaseTeste{
         cadastroPage.acessarTelaCadastro();
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "01_AcessarTelaDeCadastro");
 
-        cadastroPage.inserirDadosDeCadastro("", cadastroPage.emailValido, cadastroPage.senhaValida);
+        cadastroPage.inserirDadosDeCadastro("", TestData.TEST_EMAIL,TestData.TEST_PASSWORD);
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "02_VerificarDados");
 
         cadastroPage.confirmarDados();
@@ -90,7 +87,7 @@ public class CadastroTest extends BaseTeste{
         cadastroPage.acessarTelaCadastro();
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "01_AcessarTelaDeCadastro");
 
-        cadastroPage.inserirDadosDeCadastro(cadastroPage.nomeValido, cadastroPage.emailValido, "");
+        cadastroPage.inserirDadosDeCadastro(TestData.TEST_NOME,TestData.TEST_EMAIL, "");
         ScreenshotHelper.tirarPrint(driver, nomeDoTeste, "02_VerificarDados");
 
         cadastroPage.confirmarDados();
